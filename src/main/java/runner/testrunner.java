@@ -5,7 +5,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="C:/Users/arahate/git/VacationExotica/src/main/java/features/Search.feature",
+features="C:/Users/arahate/git/VacationExotica/src/main/java/features",
 glue={"seleniumgluecode"}
 )
 
