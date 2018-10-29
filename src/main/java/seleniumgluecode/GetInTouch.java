@@ -1,24 +1,16 @@
 package seleniumgluecode;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class GetInTouch 
+public class GetInTouch extends Main
 {
-	public static WebDriver driver;
 	
-	
-	
-	@Given("^user is on Vacation Exotica home page$")
-	public void user_is_on_Vacation_Exotica_home_page() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "D:\\Akshaya\\eclipse\\chromedriver_win32\\chromedriver.exe");
-	    driver = new ChromeDriver();
-		driver.get("https://www.vacationsexotica.com/");
-		driver.manage().window().maximize();
+	@Given("^Vacation Exotica home page$")
+	public void Vacation_Exotica_home_page() throws Throwable {
+		URLSetup();
 	}
 
 	@When("^user clicks on Quick Enquiry icon$")
@@ -28,7 +20,13 @@ public class GetInTouch
 
 	@When("^enters name as \"(.*?)\" And enters emailid as \"(.*?)\" And enters Mobile as \"(.*?)\"  and enters city as \"(.*?)\" And enters destination as \"(.*?)\" And enters add\\. req\\. as \"(.*?)\" and select permissions$")
 	public void enters_name_as_And_enters_emailid_as_And_enters_Mobile_as_and_enters_city_as_And_enters_destination_as_And_enters_add_req_as_and_select_permissions(String name, String email, String mobile, String city, String dest, String addreq) throws Throwable {
-		 driver.findElement(By.xpath("//input[@id='name' and @name='Name']")).sendKeys(name);
+formdata("//input[@id='name' and @name='Name']", name, 
+		"//input[@id='email' and @name='email']", email, 
+		"//input[@id='mobile' and @name='mobile']", mobile, 
+		"//input[@id='city' and @name='city']", city, 
+		"//input[@id='destination' and @name='destination']", dest, 
+		"//textarea[@name='add_desc' and @id='add_desc']", addreq);
+		/*driver.findElement(By.xpath("//input[@id='name' and @name='Name']")).sendKeys(name);
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//input[@id='email' and @name='email']")).sendKeys(email);
 		 Thread.sleep(2000);
@@ -39,7 +37,7 @@ public class GetInTouch
 		 driver.findElement(By.xpath("//input[@id='destination' and @name='destination']")).sendKeys(dest);
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//textarea[@name='add_desc' and @id='add_desc']")).sendKeys(addreq);
-		 Thread.sleep(2000);
+		 Thread.sleep(2000);*/
 		 driver.findElement(By.xpath("//input[@name='tnc' and @type='checkbox']")).click();
 	}
 

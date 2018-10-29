@@ -1,7 +1,8 @@
 Feature: Get In Touch Form Functionality 
 
+@validategetintouch
 Scenario Outline:To check “Submit” button click functionality with valid and invalid data
-Given user is on Vacation Exotica home page
+Given Vacation Exotica home page
 When user clicks on Quick Enquiry icon 
 And enters name as "<name>" And enters emailid as "<emailid>" And enters Mobile as "<mobile>"  and enters city as "<city>" And enters destination as "<destination>" And enters add. req. as "<addreq.>" and select permissions
 Then @validatemobilenumber
