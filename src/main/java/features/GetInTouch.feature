@@ -6,8 +6,7 @@ Given Vacation Exotica home page
 When user clicks on Quick Enquiry icon 
 And enters name as "<name>" And enters emailid as "<emailid>" And enters Mobile as "<mobile>"  and enters city as "<city>" And enters destination as "<destination>" And enters add. req. as "<addreq.>" and select permissions
 Then @validatemobilenumber
-And click on submit button
-    
+And click on submit button    
 
 Examples:
 |name|emailid|mobile|city|destination|addreq.|
