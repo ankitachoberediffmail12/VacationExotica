@@ -12,8 +12,10 @@ And click on submit button
 Examples:
 |name|emailid|mobile|city|destination|addreq.|
 |test|test@g.com|8652846290|test|test|test|
+#|123|testggom|xfd343|df434|434|434|
+#|    |     |     |     |     |        |
 
-@validatemobilenumber
-Scenario: To validate mobile number
+@validatemobilenumber 
+Scenario: To validate mobile number with valid and invalid data
 When user enters mobile number and click on Send OTP button
 Then user enters OTP and verify OTP by clicking on Verify OTP button

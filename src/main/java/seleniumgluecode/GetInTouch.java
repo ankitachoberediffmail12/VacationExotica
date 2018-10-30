@@ -1,13 +1,14 @@
 package seleniumgluecode;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+
 public class GetInTouch extends Main
 {
-	
 	@Given("^Vacation Exotica home page$")
 	public void Vacation_Exotica_home_page() throws Throwable {
 		URLSetup();
@@ -26,42 +27,34 @@ formdata("//input[@id='name' and @name='Name']", name,
 		"//input[@id='city' and @name='city']", city, 
 		"//input[@id='destination' and @name='destination']", dest, 
 		"//textarea[@name='add_desc' and @id='add_desc']", addreq);
-		/*driver.findElement(By.xpath("//input[@id='name' and @name='Name']")).sendKeys(name);
-		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("//input[@id='email' and @name='email']")).sendKeys(email);
-		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("//input[@id='mobile' and @name='mobile']")).sendKeys(mobile);
-		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("//input[@id='city' and @name='city']")).sendKeys(city);
-		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("//input[@id='destination' and @name='destination']")).sendKeys(dest);
-		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("//textarea[@name='add_desc' and @id='add_desc']")).sendKeys(addreq);
-		 Thread.sleep(2000);*/
 		 driver.findElement(By.xpath("//input[@name='tnc' and @type='checkbox']")).click();
 	}
 
 	@Then("^@validatemobilenumber$")
 	public void validatemobilenumber() throws Throwable {
-	    
+		
 	}
 
 	@Then("^click on submit button$")
 	public void click_on_submit_button() throws Throwable {
-	  Thread.sleep(2000);
-	   driver.findElement(By.xpath("//input[@id='submit-btn' and @type='submit']")).click();
+	 
 	}
-
+	
 	@When("^user enters mobile number and click on Send OTP button$")
 	public void user_enters_mobile_number_and_click_on_Send_OTP_button() throws Throwable {
-	   driver.findElement(By.xpath("//a[text()='Send OTP']")).click();
-	   driver.findElement(By.xpath("//button[@type='button' and text()='OK']")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//a[text()='Send OTP']")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//button[@type='button' and @class='swal2-confirm swal2-styled']")).click();
 	}
+	
 
 	@Then("^user enters OTP and verify OTP by clicking on Verify OTP button$")
 	public void user_enters_OTP_and_verify_OTP_by_clicking_on_Verify_OTP_button() throws Throwable {
-		Thread.sleep(6000);
+		Thread.sleep(15000);
 		driver.findElement(By.xpath("//a[text()='Verify OTP']")).click();
-	}
-	
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@type='button' and @class='swal2-confirm swal2-styled']")).click();
+		 
+		}
 }

@@ -2,27 +2,22 @@ package seleniumgluecode;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Search 
+public class Search extends Main
 {
-public static WebDriver driver;
 	
 	@Given("^user is on Vacation Exotica home page$")
 	public void user_is_on_Vacation_Exotica_home_page() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "D:\\Akshaya\\eclipse\\chromedriver_win32\\chromedriver.exe");
-	    driver = new ChromeDriver();
-		driver.get("https://www.vacationsexotica.com/");
-		driver.manage().window().maximize();
+	URLSetup();
 	}
 
 	@When("^user clicks on search icon$")
 	public void user_clicks_on_search_icon() throws Throwable {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@class='has-children two-child']/following::li[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[@class='cd-search-trigger']")).click();
 		
