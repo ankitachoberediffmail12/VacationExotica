@@ -16,17 +16,18 @@ public class Main {
 	 static WebElement elements=null;
 	
 	//method of URL setup
-		public void URLSetup() throws InterruptedException
+
+		public void URLSetup()
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
 		    driver = new ChromeDriver();
 			driver.get("https://www.vacationsexotica.com/");
 			driver.manage().window().maximize();
-			Thread.sleep(3000);
+			
 		}
 		
 public void formdata(String namexpath,String name, String emailxpath, String email, String mobilexpath, String mobile, String cityxpath, String city, String destxpath, String dest, String addreqxpath, String addreq) throws Throwable {
-	 driver.findElement(By.xpath(namexpath)).sendKeys(name);
+	driver.findElement(By.xpath(namexpath)).sendKeys(name);
 	 Thread.sleep(2000);
 	 driver.findElement(By.xpath(emailxpath)).sendKeys(email);
 	 Thread.sleep(2000);
