@@ -18,7 +18,7 @@ public class Main {
 	//method of URL setup
 		public void URLSetup()
 		{
-			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
 		    driver = new ChromeDriver();
 			driver.get("https://www.vacationsexotica.com/");
 			driver.manage().window().maximize();
