@@ -17,14 +17,12 @@ public class Search extends Main
 	@When("^user clicks on search icon$")
 	public void user_clicks_on_search_icon() throws Throwable {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[@class='has-children two-child']/following::li[1]")).click();
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[@class='cd-search-trigger']")).click();
 		
 	}
 
-	@When("^enters valid search as \"(.*?)\"$")
-	public void enters_valid_search_as(String searchname) throws Throwable {
+	@When("^enters search as \"(.*?)\"$")
+	public void enters_search_as(String searchname) throws Throwable {
 		Thread.sleep(2000);
 	    driver.findElement(By.xpath("//input[@id='s' and @name='s']")).sendKeys(searchname);
 	}
