@@ -12,7 +12,7 @@ features="C:/Users/achobe/git/VacationExotica/src/main/java/features/ContactUs.f
 
 glue={"seleniumgluecode"},
 plugin = {"pretty", "html:target/cucumber-htmlreport","json:target/cucumber-report.json", "junit:target/cucumber_report.xml"},
-dryRun = true, //- make it true when you want to check Feature > StepDef mapping 
+dryRun = false, //- make it true when you want to check Feature > StepDef mapping 
 monochrome=true 
 
 )
